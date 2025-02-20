@@ -1,0 +1,598 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+/* 🔹 Ensure nav-box is properly positioned */
+.nav-box {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    max-width: 800px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.8);  /* Ensure visibility */
+    border-radius: 10px;
+    z-index: 1000;  /* Ensure it's above other elements */
+}
+
+/* 🔹 Ensure the nav is full-width */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 🔹 Make sure the list is flexible */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 🔹 Ensure links are clickable */
+nav ul li {
+    position: relative; /* Allows absolute positioning of ::after */
+}
+
+/* 🔹 Fix link styling */
+nav ul li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* 🔹 Fix underline animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(270deg, white, #88d8f0);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* 🔹 Expand underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* 🔹 Slight zoom effect on hover */
+nav ul li a:hover {
+    background: linear-gradient(270deg, white, #88d8f0);
+    -webkit-background-clip: text; /* Apply gradient to text */
+    background-clip: text;
+    color: transparent; /* Make the original text color transparent */
+    transform: scale(1.05);
+}
+
+/* 🔹 Ensure navigation icons are positioned correctly */
+.nav-icons-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 40px;
+}
+
+/* 🔹 Ensure the search & menu icons don't interfere */
+.nav-box-search-icon,
+.nav-box-menu-icon {
+    margin-left: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-box-search-icon:hover,
+.nav-box-menu-icon:hover {
+    transform: scale(1.1);
+}
+/* 🔹 Gradient text for the active link */
+nav ul li a.active {
+    background: linear-gradient(270deg, white, #88d8f0);
+    -webkit-background-clip: text; /* Apply gradient to text */
+    background-clip: text;
+    color: transparent; /* Make the original text color transparent */
+}
+
+/* 🔹 Continuous underline for the active link */
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%; /* Full width underline */
+    height: 2px;
+    background: linear-gradient(270deg, white, #88d8f0);
+    transition: none; /* Disable transition for the active state */
+}
+
+/* 🔹 Ensure the active link doesn't lose its underline on hover */
+nav ul li a.active:hover::after {
+    width: 100%; /* Keep the underline full width on hover */
+    left: 0;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 8%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.header-text {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-top: -200px;
+}
+
+
+
+.header-text::before,
+.header-text::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(90deg, red , orange);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: lineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.header-text::before {
+    top: -30px;
+    left: 0;
+    width: 100%;
+    animation-delay: 0.2s;
+}
+
+
+
+.header-text::after {
+    bottom: -20px;
+    right: 0;
+    transform-origin: right;
+    animation-delay: 0.6s;
+}
+
+@keyframes lineExpand {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.header-text h1 {
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    margin-top:10px;
+    line-height: 1.1;               
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textReveal 1s ease-out 0.3s forwards;
+}
+
+.doctor-text {
+    font-size: 1.8rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 2.5px;
+    font-weight: 600;
+    margin-top: 35px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textReveal 0.9s ease-out 0.5s forwards;
+    background: linear-gradient(270deg, darkorange, #FFCCCB);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.working-text{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    font-weight: 200;
+    margin-top: 35px;
+    opacity: 0;
+    color: #F5F5F5;
+    transform: translateY(20px);
+    animation: textReveal 0.8s ease-out 0.7s forwards;
+}
+
+@keyframes textReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-image {
+    margin-top: -20px;
+    position: relative;
+    width: 600px;
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image is clipped inside the circular shape */
+    box-shadow: 0px -5px 40px #C19A6B; /* Adds a white glowing shadow */
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(110%); /* Start with grayscale */
+    transition: filter 0.4s ease, transform 0.3s ease; /* Smooth transition */
+    border-radius: 50%; /* Ensure the image also follows the circular shape */
+}
+
+.header-image:hover img {
+    filter: grayscale(0%) contrast(100%); /* Remove grayscale on hover */
+    transform: scale(1.025) rotate(0.5deg); /* Add slight zoom and rotation on hover */
+}
+
+@keyframes imageReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .header-container {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    
+    .header-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .header-image {
+        margin: 50px 0;
+        width: 80%;
+    }
+
+
+}
+
+
+
+.buttoncontainer {
+    display: flex;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.about_b, .contact_b {
+    width: 160px;
+    height: 55px;
+    border-radius: 18px;
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonReveal 0.6s ease-out 0.75s forwards;
+    transition: transform 0.4s ease, box-shadow 0.25s ease-in-out;
+}
+
+@keyframes buttonReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about_b {
+    background: linear-gradient(90deg, white, #C0C0C0);
+    border: 2px solid white;
+    box-shadow: 2.5px 3px 10px red;
+    border: none;
+}
+
+.contact_b {
+    background: linear-gradient(270deg, #DC143C, orange);
+    border: none;
+    box-shadow: 2px 3px 10px #FF8C00;
+}
+
+.about_b a, .contact_b a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.about_b a {
+    color: red;
+}
+
+.contact_b a {
+    color: white;
+}
+
+.about_b:hover, .contact_b:hover {
+    transform: scale(1.1);
+}
+
+
+
+.about_b:hover {
+    box-shadow: 2.5px 3px 20px red;
+    background: linear-gradient(130deg, white, #C0C0C0);
+}
+
+.contact_b:hover {
+    box-shadow: 2.5px 3px 15px #FF8C00;
+    background: linear-gradient(310deg, #DC143C, orange);
+}
+
+.aboutme_container:hover, .contact_container:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Container */
+.footer {
+    background: linear-gradient(180deg, #333333, #111111);
+    color: white;
+    padding: 40px 20px;
+    margin-top: -35px;
+    width: 100%;
+}
+
+/* Footer Content Wrapper */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Quick Links Section */
+.footer-quick-links {
+    margin-bottom: 20px;
+    flex: 1 1 200px;
+}
+
+.footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-quick-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-quick-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-quick-links ul li a:hover {
+    color: #88d8f0; /* Accent color on hover */
+}
+
+/* Contact Information Section */
+.footer-contact-info {
+    margin-bottom: 20px;
+    flex: 1 1 200px;
+}
+
+.email-list {
+    margin-top: 10px;
+}
+
+.email-list .email-label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: lightblue; /* Distinct color for "Emails" label */
+}
+
+.email-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.email-list ul li {
+    margin-bottom: 8px;
+}
+
+.email-list ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.email-list ul li a::before {
+    content: "✉️"; /* Email icon */
+    font-size: 16px;
+}
+
+.email-list ul li a:hover {
+    color: #88d8f0; /* Accent color on hover */
+}
+
+/* Social Media Links Section */
+.footer-social-media {
+    margin-bottom: 20px;
+    flex: 1 1 200px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Call to Action (CTA) Section */
+.footer-cta {
+    margin-bottom: 20px;
+    flex: 1 1 200px;
+}
+
+.footer-cta h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    background: linear-gradient(270deg, #88d8f0, #ffffff); /* Gradient for headings */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.cta-link {
+    color: #88d8f0; /* Accent color for the link */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.cta-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #88d8f0; /* Accent color for the underline */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.cta-link:hover {
+    color: white; /* Change text color on hover */
+}
+
+.cta-link:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+    transform-origin: left;
+}
+
+/* Footer Bottom Section (Copyright and Back to Top) */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.back-to-top {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #88d8f0; /* Accent color on hover */
+}
+
+/* Gradient and Bold Colors for All Footer Topics (except "Emails") */
+.footer-quick-links h3,
+.footer-contact-info h3,
+.footer-social-media h3,
+.footer-cta h3 {
+    background: linear-gradient(270deg, #88d8f0, #ffffff); /* Gradient for headings */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
