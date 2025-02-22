@@ -46,7 +46,7 @@ body {
     }
 }
 
-/* 🔹 Ensure nav-box is properly positioned */
+/* Ensure nav-box is properly positioned */
 .nav-box {
     position: fixed;
     top: 10px;
@@ -63,7 +63,7 @@ body {
     z-index: 1000;  /* Ensure it's above other elements */
 }
 
-/* 🔹 Ensure the nav is full-width */
+/* Ensure the nav is full-width */
 nav {
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ nav {
     width: 100%;
 }
 
-/* 🔹 Make sure the list is flexible */
+/* Make sure the list is flexible */
 nav ul {
     display: flex;
     gap: 20px;
@@ -80,12 +80,12 @@ nav ul {
     margin: 0;
 }
 
-/* 🔹 Ensure links are clickable */
+/* Ensure links are clickable */
 nav ul li {
     position: relative; /* Allows absolute positioning of ::after */
 }
 
-/* 🔹 Fix link styling */
+/* Fix link styling */
 nav ul li a {
     display: inline-block;
     color: white;
@@ -96,7 +96,7 @@ nav ul li a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* 🔹 Fix underline animation */
+/* Fix underline animation */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -108,13 +108,13 @@ nav ul li a::after {
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
-/* 🔹 Expand underline on hover */
+/* Expand underline on hover */
 nav ul li a:hover::after {
     width: 100%;
     left: 0;
 }
 
-/* 🔹 Slight zoom effect on hover */
+/* Slight zoom effect on hover */
 nav ul li a:hover {
     background: linear-gradient(270deg, white, #88d8f0);
     -webkit-background-clip: text; /* Apply gradient to text */
@@ -123,7 +123,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* 🔹 Ensure navigation icons are positioned correctly */
+/* Ensure navigation icons are positioned correctly */
 .nav-icons-container {
     display: flex;
     gap: 10px;
@@ -131,7 +131,7 @@ nav ul li a:hover {
     margin-left: 40px;
 }
 
-/* 🔹 Ensure the search & menu icons don't interfere */
+/* Ensure the search & menu icons don't interfere */
 .nav-box-search-icon,
 .nav-box-menu-icon {
     margin-left: 15px;
@@ -143,7 +143,8 @@ nav ul li a:hover {
 .nav-box-menu-icon:hover {
     transform: scale(1.1);
 }
-/* 🔹 Gradient text for the active link */
+
+/* Gradient text for the active link */
 nav ul li a.active {
     background: linear-gradient(270deg, white, #88d8f0);
     -webkit-background-clip: text; /* Apply gradient to text */
@@ -151,7 +152,7 @@ nav ul li a.active {
     color: transparent; /* Make the original text color transparent */
 }
 
-/* 🔹 Continuous underline for the active link */
+/* Continuous underline for the active link */
 nav ul li a.active::after {
     content: '';
     position: absolute;
@@ -163,7 +164,7 @@ nav ul li a.active::after {
     transition: none; /* Disable transition for the active state */
 }
 
-/* 🔹 Ensure the active link doesn't lose its underline on hover */
+/* Ensure the active link doesn't lose its underline on hover */
 nav ul li a.active:hover::after {
     width: 100%; /* Keep the underline full width on hover */
     left: 0;
@@ -221,7 +222,6 @@ nav ul li a.active:hover::after {
     }
 }
 
-
 .header-container {
     display: flex;
     align-items: center;
@@ -229,7 +229,7 @@ nav ul li a.active:hover::after {
     min-height: 100vh;
     padding: 0 8%;
     position: relative;
-    margin-top: -20px; /* Adjust as needed */
+    margin-top: 30px; /* Adjust this value to ensure it stays below the navigation bar */
 }
 
 .header-text {
@@ -237,6 +237,12 @@ nav ul li a.active:hover::after {
     z-index: 1;
     max-width: 600px;
     margin-top: 0; /* Reset to 0 or adjust as needed */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        margin-top: 80px; /* Increase margin for smaller screens */
+    }
 }
 
 .header-text::before,
@@ -324,8 +330,6 @@ nav ul li a.active:hover::after {
     }
 }
 
-
-
 .header-image img {
     width: 100%;
     height: 100%;
@@ -346,6 +350,7 @@ nav ul li a.active:hover::after {
         transform: translateY(0);
     }
 }
+
 .header-image {
     position: relative;
     width: 600px;
@@ -464,47 +469,6 @@ nav ul li a.active:hover::after {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Footer Container */
 .footer {
