@@ -174,7 +174,7 @@ nav ul li a.active:hover::after {
     .header-container {
         flex-direction: column;
         text-align: center;
-        margin-top: 60px; /* Adjust for smaller screens */
+        margin-top: 70px; /* Adjust for smaller screens */
     }
 
     .header-text {
@@ -229,7 +229,7 @@ nav ul li a.active:hover::after {
     min-height: 100vh;
     padding: 0 8%;
     position: relative;
-    margin-top: 30px; /* Adjust this value to ensure it stays below the navigation bar */
+    margin-top: -30px; /* Adjust this value to ensure it stays below the navigation bar */
 }
 
 .header-text {
@@ -241,7 +241,7 @@ nav ul li a.active:hover::after {
 
 @media (max-width: 768px) {
     .header-container {
-        margin-top: 80px; /* Increase margin for smaller screens */
+        margin-top: -30px; /* Increase margin for smaller screens */
     }
 }
 
@@ -375,7 +375,7 @@ nav ul li a.active:hover::after {
 @media (max-width: 1200px) {
     .header-container {
         flex-direction: column;
-        padding-top: 50px;
+        padding-top: 120px;
     }
 
     .header-text {
