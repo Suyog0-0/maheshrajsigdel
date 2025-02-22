@@ -229,8 +229,9 @@ nav ul li a.active:hover::after {
     min-height: 100vh;
     padding: 0 8%;
     position: relative;
-    margin-top: 80px; /* Adjust as needed */
+    margin-top: -20px; /* Adjust as needed */
 }
+
 .header-text {
     position: relative;
     z-index: 1;
@@ -250,20 +251,15 @@ nav ul li a.active:hover::after {
     animation: lineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.header-text.animate::before,
-.header-text.animate::after {
-    animation: lineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
 .header-text::before {
-    top: -30px;
+    top: -10px; /* Reduced from -30px */
     left: 0;
     width: 100%;
     animation-delay: 0.2s;
 }
 
 .header-text::after {
-    bottom: -20px;
+    bottom: -10px; /* Reduced from -20px */
     right: 0;
     transform-origin: right;
     animation-delay: 0.6s;
@@ -360,6 +356,7 @@ nav ul li a.active:hover::after {
     overflow: hidden;
     box-shadow: 0px -5px 40px #C19A6B;
     margin-bottom: 50px;
+    margin-top: 150px;
 }
 
 @media (max-width: 768px) {
@@ -528,17 +525,12 @@ nav ul li a.active:hover::after {
     gap: 20px;
 }
 
-/* Quick Links Section */
-.footer-quick-links {
-    margin-bottom: 20px;
-    flex: 1 1 200px;
-}
-
+/* Footer Headings */
 .footer-quick-links h3,
 .footer-contact-info h3,
 .footer-social-media h3,
 .footer-cta h3 {
-    margin-bottom: 10px; /* Reduce gap between headings and links */
+    margin-bottom: 5px; /* Reduce the gap below the headings */
     font-size: 18px;
     background: linear-gradient(270deg, #88d8f0, #ffffff);
     -webkit-background-clip: text;
@@ -547,17 +539,23 @@ nav ul li a.active:hover::after {
     font-weight: bold;
 }
 
+/* Quick Links Section */
+.footer-quick-links {
+    margin-bottom: 20px;
+    flex: 1 1 200px;
+}
+
 .footer-quick-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* Display links in rows */
     flex-wrap: wrap; /* Allow wrapping if needed */
-    gap: 10px; /* Add spacing between links */
+    gap: 10px; /* Space between links */
 }
 
 .footer-quick-links ul li {
-    margin-bottom: 8px; /* Reduce spacing between list items */
+    margin-bottom: 5px; /* Reduce gap between links */
 }
 
 .footer-quick-links ul li a {
@@ -590,13 +588,10 @@ nav ul li a.active:hover::after {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Display emails in rows */
-    flex-wrap: wrap; /* Allow wrapping if needed */
-    gap: 10px; /* Add spacing between emails */
 }
 
 .email-list ul li {
-    margin-bottom: 8px; /* Reduce spacing between list items */
+    margin-bottom: 8px;
 }
 
 .email-list ul li a {
@@ -715,18 +710,16 @@ nav ul li a.active:hover::after {
     .footer-contact-info,
     .footer-social-media,
     .footer-cta {
-        margin-bottom: 20px; /* Reduce spacing between sections */
+        margin-bottom: 20px; /* Reduce margin between sections */
     }
 
-    .footer-quick-links ul,
-    .email-list ul {
+    .footer-quick-links ul {
         flex-direction: row; /* Display links in rows */
         justify-content: center; /* Center-align links */
     }
 
-    .footer-quick-links ul li,
-    .email-list ul li {
-        margin-bottom: 5px; /* Reduce spacing between list items */
+    .footer-quick-links ul li {
+        margin-bottom: 5px; /* Reduce gap between links */
     }
 
     .social-icons {
