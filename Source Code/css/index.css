@@ -15,6 +15,40 @@ body {
     padding: 10px 10%;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+
+
 /* 🔹 Ensure nav-box is properly positioned */
 .nav-box {
     position: fixed;
@@ -138,6 +172,33 @@ nav ul li a.active:hover::after {
     left: 0;
 }
 
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .header-text {
+        margin-top: 0;
+    }
+
+    .header-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    .buttoncontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_b, .contact_b {
+        width: 100%;
+        max-width: 200px;
+    }
+}
 
 .header-container {
     display: flex;
@@ -401,6 +462,26 @@ nav ul li a.active:hover::after {
 
 
 /* Footer Container */
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-quick-links,
+    .footer-contact-info,
+    .footer-social-media,
+    .footer-cta {
+        margin-bottom: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
 .footer {
     background: linear-gradient(180deg, #333333, #111111);
     color: white;
@@ -595,4 +676,27 @@ nav ul li a.active:hover::after {
     font-weight: bold;
     margin-bottom: 15px;
     font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px 5%;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .doctor-text {
+        font-size: 1.2rem;
+    }
+
+    .working-text {
+        font-size: 1rem;
+    }
+
+    .header-image img {
+        filter: grayscale(0%) contrast(100%); /* Remove grayscale on mobile */
+    }
 }
