@@ -373,7 +373,7 @@ nav ul li a.active:hover::after {
 @media (max-width: 1200px) {
     .header-container {
         flex-direction: column;
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     .header-text {
@@ -468,31 +468,53 @@ nav ul li a.active:hover::after {
     transition: transform 0.2s ease-in-out;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Footer Container */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-quick-links,
-    .footer-contact-info,
-    .footer-social-media,
-    .footer-cta {
-        margin-bottom: 30px;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
 .footer {
     background: linear-gradient(180deg, #333333, #111111);
     color: white;
     padding: 40px 20px;
-    margin-top: -35px;
+    margin-top: 40px; /* Add space above the footer */
     width: 100%;
 }
 
@@ -512,13 +534,30 @@ nav ul li a.active:hover::after {
     flex: 1 1 200px;
 }
 
+.footer-quick-links h3,
+.footer-contact-info h3,
+.footer-social-media h3,
+.footer-cta h3 {
+    margin-bottom: 10px; /* Reduce gap between headings and links */
+    font-size: 18px;
+    background: linear-gradient(270deg, #88d8f0, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
 .footer-quick-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex; /* Display links in rows */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 10px; /* Add spacing between links */
 }
 
 .footer-quick-links ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Reduce spacing between list items */
 }
 
 .footer-quick-links ul li a {
@@ -551,10 +590,13 @@ nav ul li a.active:hover::after {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Display emails in rows */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 10px; /* Add spacing between emails */
 }
 
 .email-list ul li {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Reduce spacing between list items */
 }
 
 .email-list ul li a {
@@ -600,16 +642,6 @@ nav ul li a.active:hover::after {
 .footer-cta {
     margin-bottom: 20px;
     flex: 1 1 200px;
-}
-
-.footer-cta h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    background: linear-gradient(270deg, #88d8f0, #ffffff); /* Gradient for headings */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: bold;
 }
 
 .cta-link {
@@ -670,16 +702,34 @@ nav ul li a.active:hover::after {
     color: #88d8f0; /* Accent color on hover */
 }
 
-/* Gradient and Bold Colors for All Footer Topics (except "Emails") */
-.footer-quick-links h3,
-.footer-contact-info h3,
-.footer-social-media h3,
-.footer-cta h3 {
-    background: linear-gradient(270deg, #88d8f0, #ffffff); /* Gradient for headings */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 18px;
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px; /* Reduce gap between sections */
+    }
+
+    .footer-quick-links,
+    .footer-contact-info,
+    .footer-social-media,
+    .footer-cta {
+        margin-bottom: 20px; /* Reduce spacing between sections */
+    }
+
+    .footer-quick-links ul,
+    .email-list ul {
+        flex-direction: row; /* Display links in rows */
+        justify-content: center; /* Center-align links */
+    }
+
+    .footer-quick-links ul li,
+    .email-list ul li {
+        margin-bottom: 5px; /* Reduce spacing between list items */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center-align social icons */
+    }
 }
