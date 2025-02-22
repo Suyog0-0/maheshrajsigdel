@@ -21,7 +21,6 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Navigation */
 @media (max-width: 768px) {
     .hamburger {
         display: block; /* Show hamburger on small screens */
@@ -174,7 +173,7 @@ nav ul li a.active:hover::after {
     .header-container {
         flex-direction: column;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 60px; /* Adjust for smaller screens */
     }
 
     .header-text {
@@ -182,9 +181,9 @@ nav ul li a.active:hover::after {
     }
 
     .header-image {
-        max-width: 400px;
-        width: 100%;
-        margin: 20px auto;
+        margin-top: 10px; /* Reduce top margin */
+        max-width: 300px; /* Make the image smaller */
+        margin: 20px auto; /* Center the image */
     }
 
     .buttoncontainer {
@@ -196,6 +195,30 @@ nav ul li a.active:hover::after {
         width: 100%;
         max-width: 200px;
     }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
 }
 
 
@@ -206,13 +229,13 @@ nav ul li a.active:hover::after {
     min-height: 100vh;
     padding: 0 8%;
     position: relative;
-    margin-top: 200px; /* Add space below the fixed navigation bar */
+    margin-top: 80px; /* Adjust as needed */
 }
 .header-text {
     position: relative;
     z-index: 1;
     max-width: 600px;
-    margin-top: -200px;
+    margin-top: 0; /* Reset to 0 or adjust as needed */
 }
 
 .header-text::before,
@@ -224,6 +247,11 @@ nav ul li a.active:hover::after {
     box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
     transform: scaleX(0);
     transform-origin: left;
+    animation: lineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.header-text.animate::before,
+.header-text.animate::after {
     animation: lineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -300,17 +328,7 @@ nav ul li a.active:hover::after {
     }
 }
 
-.header-image {
-    position: relative;
-    width: 600px;
-    max-width: 600px;
-    transition: transform 0.3s ease;
-    border: none;
-    border-radius: 50%; /* Makes the image circular */
-    overflow: hidden; /* Ensures the image is clipped inside the circular shape */
-    box-shadow: 0px -5px 40px #C19A6B; /* Adds a white glowing shadow */
-    margin-bottom: 50px; /* Add space below the image */
-}
+
 
 .header-image img {
     width: 100%;
@@ -330,6 +348,25 @@ nav ul li a.active:hover::after {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+.header-image {
+    position: relative;
+    width: 600px;
+    max-width: 600px;
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px -5px 40px #C19A6B;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .header-image {
+        margin-top: 10px;
+        max-width: 300px;
+        margin: 20px auto;
     }
 }
 
