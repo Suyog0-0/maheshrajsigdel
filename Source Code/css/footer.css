@@ -204,18 +204,23 @@ body {
 
 /* Responsive Adjustments for Mobile */
 @media (max-width: 768px) {
+    
+    .footer {
+        padding: 20px 10px; /* Reduce from 40px 20px */
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 10px; /* Reduce gap between sections */
     }
-
+    
     .footer-quick-links,
     .footer-contact-info,
     .footer-social-media,
     .footer-cta {
-        margin-bottom: 20px; /* Reduce margin between sections */
+        margin-bottom: -100px; /* Reduce margin between sections */
     }
 
     .footer-quick-links ul {
@@ -224,10 +229,16 @@ body {
     }
 
     .footer-quick-links ul li {
-        margin-bottom: 5px; /* Reduce gap between links */
+        margin-bottom: 0px; /* Reduce gap between links */
     }
 
     .social-icons {
         justify-content: center; /* Center-align social icons */
     }
+
+    .footer-bottom {
+        margin-top: 10px; /* Reduce from 20px */
+        padding-top: 10px; /* Reduce from 20px */
+    }
+
 }
