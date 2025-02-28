@@ -9,23 +9,26 @@
     <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
+    <div id="overlay"></div>
+
     <!-- Include Navigation Bar -->
     <div id="navbar-placeholder"></div>
 
-    <div class="header-container-0">
+    <div class="header-container-0" id="section-0">
         <div class="header-text">
             <h1>Dr. Mahesh Raj Sigdel</h1>
             <p class="doctor-text">Professor of Medicine &<br> Nephrology</p>
+            <!-- Image will be placed here in mobile view through CSS ordering -->
             <p class="working-text">Dedicated to Mentoring medical students, providing empathetic patient care and conducting / guiding biomedical research at TU Teaching Hospital / Mahrajgunj Medical Campus, Institute Of Medicine Kathmandu.</p>
             <div class="buttoncontainer">
                 <div class="aboutme_container">
                     <button class="about_b">
-                        <a href="/index.html#about-me-section" target="_blank"><div class="aboutme">About Me</div></a>
+                        <a href="#about-me-section"><div class="aboutme">About Me</div></a>
                     </button>
                 </div>
                 <div class="contact_container">
                     <button class="contact_b">
-                        <a href="/index.html#contact-me-section" target="_blank">Contact Me</a>
+                        <a href="#contact-me-section">Contact Me</a>
                     </button>
                 </div>  
             </div>
@@ -36,27 +39,27 @@
     </div>
 
     <!-- Portfolio Section -->
-    <div class="header-container-1" id="portfolio-section">
+    <div class="header-container-1" id="section-1">
         <!-- Content for Portfolio section -->
     </div>
 
     <!-- About Me Section -->
-    <div class="header-container-2" id="about-me-section">
+    <div class="header-container-2" id="section-2">
         <!-- Content for About Me section -->
     </div>
 
     <!-- Publications Section -->
-    <div class="header-container-3" id="publications-section">
+    <div class="header-container-3" id="section-3">
         <!-- Content for Publications section -->
     </div>
 
     <!-- Contact Me Section -->
-    <div class="header-container-4" id="contact-me-section">
+    <div class="header-container-4" id="section-4">
         <!-- Content for Contact Me section -->
     </div>
 
     <!-- Another Section -->
-    <div class="header-container-5">
+    <div class="header-container-5" id="section-5">
         <!-- Content for another section -->
     </div>
 
@@ -77,7 +80,64 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
+                
+                // Initialize dropdown functionality
+                document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        const content = this.nextElementSibling;
+                        content.classList.toggle('active');
+                    });
+                });
+                
+                // Initialize scroll transition
+                initScrollTransition();
             });
+
+            // Add this to your Animations.js or create a new script
+function arrangeMobileLayout() {
+    // Check if screen width is mobile size
+    if (window.innerWidth <= 768) {
+        // Add mobile layout class to body
+        document.body.classList.add('mobile-layout');
+        
+        // Get the container and elements
+        const container = document.querySelector('.header-container-0');
+        const headerText = document.querySelector('.header-text');
+        const doctorText = document.querySelector('.doctor-text');
+        const workingText = document.querySelector('.working-text');
+        const headerImage = document.querySelector('.header-image');
+        const buttonContainer = document.querySelector('.buttoncontainer');
+        
+        // If all elements exist, rearrange for mobile
+        if (container && headerText && doctorText && workingText && headerImage && buttonContainer) {
+            // Move image between doctor-text and working-text
+            headerText.insertBefore(headerImage, workingText);
+        }
+    } else {
+        // Remove mobile layout class
+        document.body.classList.remove('mobile-layout');
+        
+        // Reset the layout for desktop view
+        const container = document.querySelector('.header-container-0');
+        const headerText = document.querySelector('.header-text');
+        const headerImage = document.querySelector('.header-image');
+        
+        // If image is inside header-text, move it back to its original position
+        if (headerText.contains(headerImage)) {
+            container.appendChild(headerImage);
+        }
+    }
+}
+
+// Execute on page load
+document.addEventListener('DOMContentLoaded', function() {
+    arrangeMobileLayout();
+    
+    // Re-execute on window resize
+    window.addEventListener('resize', arrangeMobileLayout);
+});
+
     </script>
 </body>
 </html>
