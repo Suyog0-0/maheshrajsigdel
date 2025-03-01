@@ -98,41 +98,25 @@
                 initScrollTransition();
             });
 
-        // Add this to your Animations.js or create a new script
-        function arrangeMobileLayout() {
-            // Check if screen width is mobile size
-            if (window.innerWidth <= 768) {
-                // Add mobile layout class to body
-                document.body.classList.add('mobile-layout');
-                
-                // Get the container and elements
-                const container = document.querySelector('.header-container-0');
-                const headerText = document.querySelector('.header-text');
-                const doctorText = document.querySelector('.doctor-text');
-                const workingText = document.querySelector('.working-text');
-                const headerImage = document.querySelector('.header-image');
-                const buttonContainer = document.querySelector('.buttoncontainer');
-                
-                // If all elements exist, rearrange for mobile
-                if (container && headerText && doctorText && workingText && headerImage && buttonContainer) {
-                    // Move image between doctor-text and working-text
-                    headerText.insertBefore(headerImage, workingText);
-                }
-            } else {
-                // Remove mobile layout class
-                document.body.classList.remove('mobile-layout');
-                
-                // Reset the layout for desktop view
-                const container = document.querySelector('.header-container-0');
-                const headerText = document.querySelector('.header-text');
-                const headerImage = document.querySelector('.header-image');
-                
-                // If image is inside header-text, move it back to its original position
-                if (headerText.contains(headerImage)) {
-                    container.appendChild(headerImage);
-                }
-            }
+            function arrangeMobileLayout() {
+    if (window.innerWidth <= 768) {
+        const headerText = document.querySelector('.header-text');
+        const workingText = document.querySelector('.working-text');
+        const headerImage = document.querySelector('.header-image');
+        
+        // Move image after doctor-text
+        if (headerText && workingText && headerImage) {
+            headerText.insertBefore(headerImage, workingText);
         }
+    } else {
+        // Reset to desktop layout
+        const container = document.querySelector('.header-container-0');
+        const headerImage = document.querySelector('.header-image');
+        if (container && headerImage) {
+            container.appendChild(headerImage);
+        }
+    }
+}
 
         // Execute on page load
         document.addEventListener('DOMContentLoaded', function() {
