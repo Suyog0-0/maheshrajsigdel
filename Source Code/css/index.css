@@ -231,59 +231,50 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
     body {
-        padding-top: 10px; /* Reduced padding-top for mobile */
+        padding-top: 90px; /* Proper spacing for navbar */
     }
 
     .header-container-0 {
-        padding-top: 20px; /* Reduced padding-top for mobile */
-    }
-
-    .header-text {
-        margin-top: -10px; /* Reduced margin-top for mobile */
+        flex-direction: column; /* Stack elements vertically */
+        padding: 20px 5%; /* Better mobile padding */
+        min-height: auto;
     }
 
     .header-image {
-        display: flex;
-        align-items: center;
-        width: 300px; /* Adjust width for mobile */
-        height: 400px; /* Adjust height for mobile */
-        margin: 30px auto; /* Center the image */
-        box-shadow: none;
-        
-
+        order: 2; /* Position between title and description */
+        width: 250px;
+        height: 333px; /* Maintain 3:4 aspect ratio */
+        min-width: unset;
+        margin: 20px auto; /* Center the image */
+        border-radius: 50%/30%; /* Oval shape */
+        box-shadow: 0px -5px 40px #C19A6B; /* Restore shadow */
     }
 
     .header-image img {
-        border-radius: 50% / 30%; /* Maintain oval shape */
-        width: 300px;
-        margin-left: 100px;
-        height: 400px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-        border: none;
-        border-radius: 50% / 30%; /* Adjust this for oval shape */
-
-        box-shadow: 0px -5px 40px #C19A6B;
+        width: 100%;
+        height: 100%;
+        margin-left: 0; /* Remove horizontal offset */
+        border-radius: inherit; /* Inherit container's border-radius */
     }
 
     .doctor-text {
-        margin-bottom: 0;
+        order: 1;
+        margin: 20px 0;
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .working-text {
         order: 3;
-        margin-top: 20px;
-        padding: 0 15px;
+        margin: 20px 0;
+        padding: 0;
         font-size: 1rem;
-        text-align: center;
     }
 
     .buttoncontainer {
         order: 4;
+        margin: 30px auto;
         justify-content: center;
-        margin-top: 30px;
-        width: 100%;
     }
 
     .about_b, .contact_b {
