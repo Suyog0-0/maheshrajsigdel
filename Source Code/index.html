@@ -18,7 +18,6 @@
         <div class="header-text">
             <h1>Dr. Mahesh Raj Sigdel</h1>
             <p class="doctor-text">Professor of Medicine &<br> Nephrology</p>
-            <!-- Image will be placed here in mobile view through CSS ordering -->
             <p class="working-text">Dedicated to Mentoring medical students, providing empathetic patient care and conducting / guiding biomedical research at TU Teaching Hospital / Mahrajgunj Medical Campus, Institute Of Medicine Kathmandu.</p>
             <div class="buttoncontainer">
                 <div class="aboutme_container">
@@ -40,27 +39,32 @@
 
     <!-- Portfolio Section -->
     <div class="header-container-1" id="section-1">
-        <!-- Content for Portfolio section -->
+        <h2>Portfolio</h2>
+        <!-- Add portfolio content here -->
     </div>
 
     <!-- About Me Section -->
     <div class="header-container-2" id="section-2">
-        <!-- Content for About Me section -->
+        <h2>About Me</h2>
+        <!-- Add about me content here -->
     </div>
 
     <!-- Publications Section -->
     <div class="header-container-3" id="section-3">
-        <!-- Content for Publications section -->
+        <h2>Publications</h2>
+        <!-- Add publications content here -->
     </div>
 
     <!-- Contact Me Section -->
     <div class="header-container-4" id="section-4">
-        <!-- Content for Contact Me section -->
+        <h2>Contact Me</h2>
+        <!-- Add contact me content here -->
     </div>
 
     <!-- Another Section -->
     <div class="header-container-5" id="section-5">
-        <!-- Content for another section -->
+        <h2>Additional Section</h2>
+        <!-- Add additional content here -->
     </div>
 
     <!-- Include Footer -->
@@ -94,50 +98,49 @@
                 initScrollTransition();
             });
 
-            // Add this to your Animations.js or create a new script
-function arrangeMobileLayout() {
-    // Check if screen width is mobile size
-    if (window.innerWidth <= 768) {
-        // Add mobile layout class to body
-        document.body.classList.add('mobile-layout');
-        
-        // Get the container and elements
-        const container = document.querySelector('.header-container-0');
-        const headerText = document.querySelector('.header-text');
-        const doctorText = document.querySelector('.doctor-text');
-        const workingText = document.querySelector('.working-text');
-        const headerImage = document.querySelector('.header-image');
-        const buttonContainer = document.querySelector('.buttoncontainer');
-        
-        // If all elements exist, rearrange for mobile
-        if (container && headerText && doctorText && workingText && headerImage && buttonContainer) {
-            // Move image between doctor-text and working-text
-            headerText.insertBefore(headerImage, workingText);
+        // Add this to your Animations.js or create a new script
+        function arrangeMobileLayout() {
+            // Check if screen width is mobile size
+            if (window.innerWidth <= 768) {
+                // Add mobile layout class to body
+                document.body.classList.add('mobile-layout');
+                
+                // Get the container and elements
+                const container = document.querySelector('.header-container-0');
+                const headerText = document.querySelector('.header-text');
+                const doctorText = document.querySelector('.doctor-text');
+                const workingText = document.querySelector('.working-text');
+                const headerImage = document.querySelector('.header-image');
+                const buttonContainer = document.querySelector('.buttoncontainer');
+                
+                // If all elements exist, rearrange for mobile
+                if (container && headerText && doctorText && workingText && headerImage && buttonContainer) {
+                    // Move image between doctor-text and working-text
+                    headerText.insertBefore(headerImage, workingText);
+                }
+            } else {
+                // Remove mobile layout class
+                document.body.classList.remove('mobile-layout');
+                
+                // Reset the layout for desktop view
+                const container = document.querySelector('.header-container-0');
+                const headerText = document.querySelector('.header-text');
+                const headerImage = document.querySelector('.header-image');
+                
+                // If image is inside header-text, move it back to its original position
+                if (headerText.contains(headerImage)) {
+                    container.appendChild(headerImage);
+                }
+            }
         }
-    } else {
-        // Remove mobile layout class
-        document.body.classList.remove('mobile-layout');
-        
-        // Reset the layout for desktop view
-        const container = document.querySelector('.header-container-0');
-        const headerText = document.querySelector('.header-text');
-        const headerImage = document.querySelector('.header-image');
-        
-        // If image is inside header-text, move it back to its original position
-        if (headerText.contains(headerImage)) {
-            container.appendChild(headerImage);
-        }
-    }
-}
 
-// Execute on page load
-document.addEventListener('DOMContentLoaded', function() {
-    arrangeMobileLayout();
-    
-    // Re-execute on window resize
-    window.addEventListener('resize', arrangeMobileLayout);
-});
-
+        // Execute on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            arrangeMobileLayout();
+            
+            // Re-execute on window resize
+            window.addEventListener('resize', arrangeMobileLayout);
+        });
     </script>
 </body>
 </html>
