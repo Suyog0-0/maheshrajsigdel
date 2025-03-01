@@ -123,14 +123,6 @@ body {
     }
 }
 
-
-
-
-
-
-
-
-
 .header-image {
     position: relative;
     width: 600px;
@@ -145,7 +137,7 @@ body {
     margin-bottom: 50px;
     margin-top: 150px;   
 }
-/* Update image styles */
+
 .header-image img {
     width: 100%;
     height: 100%;
@@ -154,14 +146,6 @@ body {
     filter: grayscale(0%) contrast(110%);
     transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
-
-
-
-
-
-
-
-
 
 .header-image:hover img {
     filter: grayscale(100%) contrast(100%); /* Grayscale on hover */
@@ -174,6 +158,7 @@ body {
     margin-top: 35px;
 }
 
+/* About Me and Contact Me Buttons */
 .about_b, .contact_b {
     width: 160px;
     height: 55px;
@@ -188,7 +173,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: buttonReveal 0.6s ease-out 0.75s forwards;
-    transition: transform 0.4s ease, box-shadow 0.25s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 @keyframes buttonReveal {
@@ -230,18 +215,40 @@ body {
     color: white;
 }
 
+/* Hover Animations */
 .about_b:hover, .contact_b:hover {
-    transform: scale(1.1);
+    transform: translateY(-2px) scale(1.05); /* Move up by 1px and scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .about_b:hover {
-    box-shadow: 2.5px 3px 20px red;
     background: linear-gradient(130deg, white, #C0C0C0);
+    box-shadow: 2.5px 3px 20px red;
 }
 
 .contact_b:hover {
-    box-shadow: 2.5px 3px 15px #FF8C00;
     background: linear-gradient(310deg, #DC143C, orange);
+    box-shadow: 2.5px 3px 15px #FF8C00;
+}
+
+/* Ripple Effect */
+.about_b::after, .contact_b::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.about_b:hover::after, .contact_b:hover::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
 }
 
 /* Mobile Styles */
@@ -273,8 +280,8 @@ body {
         border-radius: inherit; /* Inherit container's border-radius */
     }
 
-    .header-text{
-text-align: center;
+    .header-text {
+        text-align: center;
     }
 
     .doctor-text {
@@ -301,5 +308,6 @@ text-align: center;
     .about_b, .contact_b {
         width: 140px;
         height: 50px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 }
