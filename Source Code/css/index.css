@@ -256,7 +256,11 @@ body {
         margin-left: 0; /* Remove horizontal offset */
         border-radius: inherit; /* Inherit container's border-radius */
     }
-
+    
+    .header-text{
+        text-align: center;
+    }
+    
     .doctor-text {
         order: 1;
         margin: 20px 0;
