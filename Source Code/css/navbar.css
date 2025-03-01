@@ -113,7 +113,7 @@ nav ul li a::after {
     bottom: -3px;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #FF8C00, #FFD700); /* Dark orange to yellow gradient */
+    background: linear-gradient(90deg, #FF8C00, #FFFFC5); /* Dark orange to yellow gradient */
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
 }
@@ -125,7 +125,7 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     transform: translateY(-2px);
-    color: #FF8C00;
+    color: linear-gradient(90deg, #FF8C00, #FFFFC5);
 }
 
 .nav-icons-container {
@@ -149,14 +149,14 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    color: #FF8C00;
+    color: linear-gradient(90deg, #FF8C00, #FFFFC5);
     animation: pulse 1.2s infinite alternate;
 }
 
 nav ul li a.active::after {
     width: 100%;
     left: 50%;
-    background: linear-gradient(90deg, #FF8C00, #FFD700); /* Dark orange to yellow gradient */
+    background: linear-gradient(90deg, #FF8C00, #FFFFC5); /* Dark orange to yellow gradient */
 }
 
 @keyframes slideIn {
