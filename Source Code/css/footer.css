@@ -13,15 +13,15 @@ body {
 
 .footer {
     background: linear-gradient(180deg, #222, #1a1a1a);
-    padding: 40px 20px;
-    margin-top: 40px;
+    padding: 30px 20px; /* Reduced padding */
+    margin-top: 30px; /* Reduced margin */
     width: 100%;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 20px; /* Reduced gap between columns */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -29,7 +29,7 @@ body {
 .dropdown {
     background: transparent;
     border-radius: 12px;
-    padding: 15px;
+    padding: 12px; /* Reduced padding */
     transition: transform 0.3s ease;
 }
 
@@ -38,7 +38,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 15px;
+    padding: 12px; /* Reduced padding */
     background: linear-gradient(145deg, #333, #444);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
@@ -53,12 +53,12 @@ body {
 
 .dropdown-toggle h3 {
     color: #88d8f0;
-    font-size: 20px;
+    font-size: 18px; /* Slightly smaller font size */
     margin: 0;
 }
 
 .toggle-icon {
-    font-size: 24px;
+    font-size: 20px; /* Smaller icon */
     transition: transform 0.3s ease;
 }
 
@@ -68,10 +68,10 @@ body {
 
 .dropdown-content {
     display: block; /* Default display for desktop */
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
     background: linear-gradient(145deg, #444, #555);
     border-radius: 12px;
-    padding: 15px;
+    padding: 12px; /* Reduced padding */
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     animation: fadeIn 0.3s ease;
 }
@@ -99,14 +99,14 @@ body {
 
 .dropdown-content .footer-quick-links li {
     list-style: none;
-    margin-bottom: 15px;
-    margin-left: 15px;
+    margin-bottom: 10px; /* Reduced margin */
+    margin-left: 10px; /* Reduced margin */
 }
 
 .dropdown-content .footer-quick-links a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px; /* Slightly smaller font size */
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
@@ -119,7 +119,7 @@ body {
 .dropdown-content .email-list .email-label {
     color: #88d8f0;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Reduced margin */
 }
 
 .dropdown-content .email-list ul {
@@ -128,7 +128,7 @@ body {
 }
 
 .dropdown-content .email-list li {
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Reduced margin */
 }
 
 .dropdown-content .email-list a {
@@ -136,7 +136,7 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px; /* Reduced gap */
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
@@ -147,18 +147,18 @@ body {
 
 .dropdown-content .email-list a::before {
     content: "✉️";
-    font-size: 16px;
+    font-size: 14px; /* Smaller icon */
 }
 
 /* Social Media Styles */
 .dropdown-content .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 12px; /* Reduced gap */
 }
 
 .dropdown-content .social-icons img {
-    width: 24px;
-    height: 24px;
+    width: 22px; /* Slightly smaller icons */
+    height: 22px;
     transition: transform 0.3s ease;
 }
 
@@ -181,8 +181,8 @@ body {
 
 /* Footer Bottom */
 .footer-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 30px; /* Reduced margin */
+    padding-top: 15px; /* Reduced padding */
     border-top: 1px solid #333;
     text-align: center;
 }
@@ -195,7 +195,7 @@ body {
 
 .footer-bottom a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
     color: #88d8f0;
     text-decoration: none;
     font-weight: bold;
@@ -210,15 +210,15 @@ body {
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px; /* Reduced gap */
     }
 
     .dropdown-toggle h3 {
-        font-size: 18px;
+        font-size: 16px; /* Smaller font size */
     }
 
     .toggle-icon {
-        font-size: 20px;
+        font-size: 18px; /* Smaller icon */
     }
 
     .footer-bottom p {
