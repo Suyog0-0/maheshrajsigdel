@@ -125,30 +125,29 @@ body {
 
 .header-image {
     position: relative;
-    width: 600px; /* Adjust width as needed */
-    height: 800px; /* Adjust height to make it oval */
+    width: 600px;
+    height: 800px;
     margin: 20px;
     min-width: 500px;
     max-width: 600px;
-    transition: transform 0.3s ease;
     border: none;
-    border-radius: 50% / 30%; /* Adjust this for oval shape */
+    border-radius: 50% / 30%;
     overflow: hidden;
     box-shadow: 0px -5px 40px #C19A6B;
     margin-bottom: 50px;
-    margin-top: 150px; /* Adjust as needed */
+    margin-top: 150px;
 }
 
 .header-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) contrast(110%);
+    filter: grayscale(0%) contrast(110%); /* Color by default */
     transition: filter 0.4s ease, transform 0.3s ease;
 }
 
 .header-image:hover img {
-    filter: grayscale(0%) contrast(100%);
+    filter: grayscale(100%) contrast(100%); /* Grayscale on hover */
     transform: scale(1.025) rotate(0.5deg);
 }
 
@@ -256,11 +255,11 @@ body {
         margin-left: 0; /* Remove horizontal offset */
         border-radius: inherit; /* Inherit container's border-radius */
     }
-    
+
     .header-text{
-        text-align: center;
+text-align: center;
     }
-    
+
     .doctor-text {
         order: 1;
         margin: 20px 0;
@@ -273,6 +272,7 @@ body {
         margin: 20px 0;
         padding: 0;
         font-size: 1rem;
+        text-align: center;
     }
 
     .buttoncontainer {
