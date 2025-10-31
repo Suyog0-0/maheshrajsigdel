@@ -21,10 +21,10 @@ const Navbar = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/#portfolio-section", label: "Portfolio" },
-    { href: "/#about-me-section", label: "About Me" },
-    { href: "/#publications-section", label: "Publications" },
-    { href: "/#contact-me-section", label: "Contact Me" }
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/about", label: "About Me" },
+    { href: "/publications", label: "Publications" },
+    { href: "/contact", label: "Contact Me" }
   ];
 
   return (
