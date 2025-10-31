@@ -1,112 +1,127 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-const NavigationBar = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/#portfolio-section", label: "Portfolio" },
+    { href: "/#about-me-section", label: "About Me" },
+    { href: "/#publications-section", label: "Publications" },
+    { href: "/#contact-me-section", label: "Contact Me" }
+  ];
+
   return (
-    <div id="header" className="fixed top-0 left-0 w-full z-50 flex justify-center">
-      <div id="container" className="w-full max-w-6xl px-4 py-2.5">
-        <div className="nav-box fixed top-2.5 left-1/2 transform -translate-x-1/2 flex items-center justify-center w-[calc(100%-2rem)] max-w-3xl h-15 bg-gradient-to-r from-black to-gray-700 backdrop-blur-md rounded-xl z-50 shadow-lg shadow-black/30 transition-all duration-300">
-          <nav className="flex items-center justify-between w-full px-4">
-            <div 
-              className="hamburger md:hidden cursor-pointer transition-transform duration-300 hover:scale-105"
-              onClick={toggleMenu}
-            >
-              <Image 
-                className="w-5 h-5" 
-                src="/images/menubar_white.png" 
-                alt="Menu" 
-                width={20}
-                height={20}
-              />
+    <>
+      <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'py-2 bg-gray-950/90 backdrop-blur-xl shadow-2xl shadow-black/40' : 'py-4 bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-gray-900/95 via-gray-950/95 to-black/95 backdrop-blur-2xl border border-gray-800/50 rounded-2xl shadow-2xl shadow-black/30 overflow-hidden">
+            
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-r from-orange-500/5 to-red-500/5 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-r from-red-500/5 to-orange-500/5 rounded-full blur-xl"></div>
             </div>
-            
-            <ul 
-              className={`nav-links absolute top-15 left-0 mt-1.25 w-full bg-black/90 backdrop-blur backdrop-blur-md rounded-xl shadow-lg shadow-black/30 py-3.75 px-0 flex-col items-center justify-center gap-3 md:flex md:flex-row md:static md:bg-transparent md:backdrop-blur-none md:shadow-none md:py-0 md:px-0 md:gap-6 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}
-            >
-              <li>
-                <a 
-                  href="/index.html" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link block text-white text-base py-1.25 px-2.5 relative transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:text-orange-500"
-                >
-                  Home
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-yellow-200 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/index.html#portfolio-section" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link block text-white text-base py-1.25 px-2.5 relative transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:text-orange-500"
-                >
-                  Portfolio
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-yellow-200 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/index.html#about-me-section" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link block text-white text-base py-1.25 px-2.5 relative transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:text-orange-500"
-                >
-                  About Me
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-yellow-200 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/index.html#publications-section" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link block text-white text-base py-1.25 px-2.5 relative transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:text-orange-500"
-                >
-                  Publications
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-yellow-200 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/index.html#contact-me-section" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="nav-link block text-white text-base py-1.25 px-2.5 relative transition-all duration-300 hover:transform hover:-translate-y-0.5 hover:text-orange-500"
-                >
-                  Contact Me
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-yellow-200 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                </a>
-              </li>
-            </ul>
-            
-            <div className="nav-icons-container flex items-center gap-3.75 ml-auto md:ml-7.5">
-              <a 
-                href="#" 
-                className="search-link transition-transform duration-300 hover:scale-105 hover:brightness-125"
+
+            <nav className="relative flex items-center justify-between h-16 lg:h-20 px-4 lg:px-6">
+              {/* Hamburger Menu - Mobile */}
+              <div 
+                className="lg:hidden cursor-pointer transition-all duration-300 hover:scale-110 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 z-50 relative"
+                onClick={toggleMenu}
               >
-                <Image 
-                  className="w-5 h-5" 
-                  src="/images/White_Search.png" 
-                  alt="Search" 
-                  width={20}
-                  height={20}
-                />
-              </a>
-            </div>
-          </nav>
+                {/* CSS-only Hamburger Icon */}
+                <div className="w-6 h-6 flex flex-col justify-center items-center">
+                  <span className={`block w-4 h-0.5 bg-gray-300 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}></span>
+                  <span className={`block w-4 h-0.5 bg-gray-300 rounded-full transition-all duration-300 my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                  <span className={`block w-4 h-0.5 bg-gray-300 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-0.5'}`}></span>
+                </div>
+              </div>
+              
+              {/* Navigation Links - Desktop */}
+              <ul className="hidden lg:flex items-center gap-8">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link 
+                      href={item.href}
+                      className="group relative inline-block py-2 text-gray-300 hover:text-orange-400 text-base font-medium transition-all duration-300"
+                    >
+                      <span className="relative z-10">{item.label}</span>
+                      
+                      <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-4/5 group-hover:left-1/10 -translate-x-1/2 group-hover:translate-x-0 rounded-full"></div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Search Icon */}
+              <div className="flex items-center gap-4 relative z-50">
+                <Link 
+                  href="#" 
+                  className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 hover:brightness-125 group"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-gray-300 transition-transform duration-300 group-hover:scale-110">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>
+                </Link>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Navigation Menu Backdrop - Separate layer for blur */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-40 backdrop-blur-sm transition-all duration-300 ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+
+      {/* Mobile Navigation Menu Content - Above backdrop, no blur */}
+      <div className={`lg:hidden fixed left-4 right-4 z-50 transition-all duration-300 transform ${
+        isMenuOpen ? 'top-24 translate-y-0 opacity-100 pointer-events-auto' : 'top-20 -translate-y-4 opacity-0 pointer-events-none'
+      }`}>
+        <div 
+          className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl shadow-2xl border border-gray-800/50 py-4"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ul className="flex flex-col items-center gap-1">
+            {navItems.map((item, index) => (
+              <li key={item.href} className="w-full text-center">
+                <Link 
+                  href={item.href}
+                  className="group relative inline-block py-3 px-6 text-gray-300 hover:text-orange-400 text-base font-medium transition-all duration-300 w-full"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  
+                  <div className="absolute bottom-2 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-4/5 group-hover:left-1/10 -translate-x-1/2 group-hover:translate-x-0 rounded-full"></div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default NavigationBar;
+export default Navbar;

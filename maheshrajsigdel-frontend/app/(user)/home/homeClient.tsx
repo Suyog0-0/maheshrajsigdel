@@ -24,7 +24,7 @@ export default function HomeClient() {
       {/* ========================================
           HERO SECTION - MODERN PROFESSIONAL DESIGN
       ======================================== */}
-      <div className={`hero-section bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`hero-section bg-gradient-to-br from-gray-950 via-black to-gray-950 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -272,7 +272,7 @@ export default function HomeClient() {
 
         @media (max-width: 768px) {
           body {
-            padding-top: 80px;
+            padding-top: 80px; /* Add padding to account for fixed navbar */
           }
 
           .hero-section {
@@ -323,8 +323,8 @@ export default function HomeClient() {
 
           .hero-description {
             font-size: 1rem;
-            padding: 0;
             line-height: 1.6;
+            padding: 0;
           }
 
           .hero-buttons {
