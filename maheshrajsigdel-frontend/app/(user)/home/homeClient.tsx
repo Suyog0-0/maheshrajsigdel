@@ -63,6 +63,30 @@ export default function HomeClient() {
               </p>
             </div>
 
+            {/* Professional Image Container - Only visible on mobile */}
+            <div className="hero-image-container-mobile lg:hidden flex justify-center transform transition-all duration-1000 delay-400">
+              <div className="relative group">
+                {/* Subtle Glow Effects */}
+                <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-[42%_58%_63%_37%_/_41%_44%_56%_59%] blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60 animate-glow"></div>
+                
+                {/* Main Image Container - Mobile view */}
+                <div className="hero-image-wrapper-mobile relative w-48 h-60 sm:w-56 sm:h-72 rounded-[40%_60%_60%_40%_/_50%_45%_55%_50%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
+                  <Image
+                    src="/images/Homepage_Face_2.jpg"
+                    alt="Dr. Mahesh Raj Sigdel – Professor of Medicine & Nephrology"
+                    width={600}
+                    height={800}
+                    className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-110"
+                    priority
+                    onLoad={() => setIsLoaded(true)}
+                  />
+                  
+                  {/* Subtle Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-50"></div>
+                </div>
+              </div>
+            </div>
+
             {/* Professional Description */}
             <p className="hero-description font-sans text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light tracking-wide opacity-90 transform transition-all duration-700 delay-300">
               Dedicated to mentoring medical students, providing empathetic patient care, 
@@ -70,7 +94,7 @@ export default function HomeClient() {
               Maharajgunj Medical Campus, Institute of Medicine, Kathmandu.
             </p>
 
-            {/* Professional Button Group */}
+            {/* Professional Button Group - Side by side on mobile */}
             <div className="hero-buttons flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 pt-6 transform transition-all duration-700 delay-500">
               <Link href="#about-me-section" className="group relative inline-block">
                 <div className="btn btn--about transform transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-950 shadow-lg border border-white/20 hover:from-gray-400 hover:to-gray-300 hover:shadow-xl">
@@ -86,14 +110,14 @@ export default function HomeClient() {
             </div>
           </div>
 
-          {/* --- Professional Image Container --- */}
-          <div className="hero-image-container flex justify-center lg:justify-end transform transition-all duration-1000 delay-300">
+          {/* --- Professional Image Container - Only visible on desktop --- */}
+          <div className="hero-image-container-desktop hidden lg:flex justify-center lg:justify-end transform transition-all duration-1000 delay-300">
             <div className="relative group">
               {/* Subtle Glow Effects */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-[42%_58%_63%_37%_/_41%_44%_56%_59%] blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60 animate-glow"></div>
+              <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-[45%_55%_60%_40%_/_40%_45%_55%_60%] blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60 animate-glow"></div>
               
-              {/* Main Image Container */}
-              <div className="hero-image-wrapper relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[28rem] rounded-[40%_60%_60%_40%_/_50%_45%_55%_50%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
+              {/* Main Image Container - Desktop view with premium aesthetic shape */}
+              <div className="hero-image-wrapper-desktop relative w-[32rem] h-[42rem] rounded-[38%_62%_48%_52%_/_42%_48%_52%_58%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
                 <Image
                   src="/images/Homepage_Face_2.jpg"
                   alt="Dr. Mahesh Raj Sigdel – Professor of Medicine & Nephrology"
@@ -108,13 +132,6 @@ export default function HomeClient() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-50"></div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
       </div>
@@ -202,10 +219,14 @@ export default function HomeClient() {
         }
 
         .hero-text > *:nth-child(3) {
-          animation-delay: 0.5s;
+          animation-delay: 0.4s; /* For mobile image */
         }
 
         .hero-text > *:nth-child(4) {
+          animation-delay: 0.5s;
+        }
+
+        .hero-text > *:nth-child(5) {
           animation-delay: 0.7s;
         }
 
@@ -221,11 +242,11 @@ export default function HomeClient() {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 150px;
-          height: 54px;
-          border-radius: 18px;
+          width: 140px;
+          height: 50px;
+          border-radius: 16px;
           font-family: system-ui, sans-serif;
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 600;
           letter-spacing: 0.5px;
           cursor: pointer;
@@ -255,7 +276,7 @@ export default function HomeClient() {
           }
 
           .hero-section {
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             min-height: auto;
           }
 
@@ -280,20 +301,20 @@ export default function HomeClient() {
           }
 
           .btn {
-            width: 140px;
-            height: 52px;
-            font-size: 16px;
+            width: 130px;
+            height: 48px;
+            font-size: 15px;
           }
 
-          .hero-image-wrapper {
-            width: 280px;
-            height: 360px;
+          .hero-image-wrapper-mobile {
+            width: 200px;
+            height: 260px;
           }
         }
 
         @media (max-width: 480px) {
           .hero-section {
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
           }
 
           .hero-title {
@@ -303,36 +324,49 @@ export default function HomeClient() {
           .hero-description {
             font-size: 1rem;
             padding: 0;
+            line-height: 1.6;
           }
 
           .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+            flex-direction: row; /* Side by side on mobile */
+            justify-content: center;
+            gap: 0.75rem;
           }
 
           .btn {
-            width: 200px;
-            height: 52px;
+            width: 120px;
+            height: 46px;
+            font-size: 14px;
           }
 
-          .hero-image-wrapper {
-            width: 240px;
-            height: 320px;
+          .hero-image-wrapper-mobile {
+            width: 180px;
+            height: 240px;
           }
         }
 
         @media (max-width: 360px) {
           .hero-section {
-            padding: 2rem 0.5rem;
+            padding: 1.5rem 0.5rem;
           }
 
           .hero-title {
             font-size: 1.5rem;
           }
 
+          .hero-description {
+            font-size: 0.95rem;
+          }
+
           .btn {
-            width: 180px;
+            width: 110px;
+            height: 44px;
+            font-size: 13px;
+          }
+
+          .hero-image-wrapper-mobile {
+            width: 160px;
+            height: 220px;
           }
         }
       `}</style>
