@@ -146,7 +146,7 @@ export default function ContactClient() {
                       <h3 className="text-lg font-semibold text-gray-200 mb-3">Connect With Me</h3>
                       <div className="flex gap-3">
                         <a
-                          href="https://linkedin.com/in/mahesh-raj-sigdel-27643b166"
+                          href="https://linkedin.com/in/mahesh-raj-sigdel-27643b166  "
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
@@ -156,7 +156,7 @@ export default function ContactClient() {
                           />
                         </a>
                         <a
-                          href="https://www.instagram.com/maheshrajsigdel/"
+                          href="https://www.instagram.com/maheshrajsigdel/  "
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
@@ -166,7 +166,7 @@ export default function ContactClient() {
                           />
                         </a>
                         <a
-                          href="https://x.com/maheshsigdel2"
+                          href="https://x.com/maheshsigdel2  "
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
@@ -186,13 +186,10 @@ export default function ContactClient() {
               <div className="hidden lg:block relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60"></div>
                 <div className="relative w-full h-64 bg-gray-800/50 rounded-3xl border border-gray-700/50 overflow-hidden">
-                  <Image
-                    src="https://plus.unsplash.com/premium_photo-1682130152050-aa8dad566b15?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&ixlib=rb-4.1.0&q=60&w=3000"
+                  <img
+                    src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                     alt="Doctors helping patients"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 100vw, 0vw"
-                    priority={false}
+                    className="object-cover w-full h-full"
                   />
                 </div>
               </div>
