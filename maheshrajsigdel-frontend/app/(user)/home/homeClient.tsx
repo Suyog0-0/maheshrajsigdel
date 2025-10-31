@@ -70,7 +70,7 @@ export default function HomeClient() {
                 <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-[42%_58%_63%_37%_/_41%_44%_56%_59%] blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60 animate-glow"></div>
                 
                 {/* Main Image Container - Mobile view */}
-                <div className="hero-image-wrapper-mobile relative w-48 h-60 sm:w-56 sm:h-72 rounded-[40%_60%_60%_40%_/_50%_45%_55%_50%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
+                <div className="hero-image-wrapper-mobile relative w-48 h-60 sm:w-56 sm:h-72 rounded-[40%_60%_55%_45%_/_42%_48%_52%_58%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
                   <Image
                     src="/images/Homepage_Face_2.jpg"
                     alt="Dr. Mahesh Raj Sigdel – Professor of Medicine & Nephrology"
@@ -117,7 +117,7 @@ export default function HomeClient() {
               <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-[45%_55%_60%_40%_/_40%_45%_55%_60%] blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60 animate-glow"></div>
               
               {/* Main Image Container - Desktop view with premium aesthetic shape */}
-              <div className="hero-image-wrapper-desktop relative w-[32rem] h-[42rem] rounded-[38%_62%_48%_52%_/_42%_48%_52%_58%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
+              <div className="hero-image-wrapper-desktop relative w-[32rem] h-[42rem] rounded-[40%_60%_55%_45%_/_42%_48%_52%_58%] overflow-hidden shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] border border-gray-700/50">
                 <Image
                   src="/images/Homepage_Face_2.jpg"
                   alt="Dr. Mahesh Raj Sigdel – Professor of Medicine & Nephrology"
