@@ -16,7 +16,7 @@ const AboutMeSection = () => {
           lineHeight: 1.12,
         }}
       >
-        About Page
+        About Me Page
       </h1>
 
       <style jsx>{`
