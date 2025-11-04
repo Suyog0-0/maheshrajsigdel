@@ -382,12 +382,12 @@ const Navbar = () => {
                     {/* Active indicator for mobile */}
                     {isActive ? (
                       <>
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-lg shadow-orange-500/50"></div>
+                        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1/4 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-lg shadow-orange-500/50"></div>
                         <div className="absolute inset-0 bg-orange-500/5 rounded-lg"></div>
                       </>
                     ) : (
                       <>
-                        <div className="absolute bottom-2 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-4/5 -translate-x-1/2 rounded-full"></div>
+                        <div className="absolute bottom-2 left-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-1/3 -translate-x-1/2 rounded-full"></div>
                         <div className="absolute inset-0 rounded-lg bg-orange-500/0 group-hover:bg-orange-500/5 transition-all duration-300"></div>
                       </>
                     )}
