@@ -147,9 +147,9 @@ const Navbar = () => {
                 onClick={toggleMenu}
               >
                 <div className="w-6 h-6 flex flex-col justify-center items-center">
-                  <span className={`block w-5 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}></span>
+                  <span className={`block w-4 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}></span>
                   <span className={`block w-4 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300 my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                  <span className={`block w-6 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-0.5'}`}></span>
+                  <span className={`block w-4 h-0.5 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-0.5'}`}></span>
                 </div>
               </div>
               
