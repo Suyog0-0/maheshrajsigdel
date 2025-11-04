@@ -187,7 +187,7 @@ const Footer = () => {
           
           <button 
             onClick={scrollToTop}
-            className="group inline-flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-all duration-300 font-medium hover:-translate-y-0.5 font-[Poppins]"
+            className="group inline-flex items-center gap-2 text-orange-400 hover:text-gray-500 transition-all duration-300 font-medium hover:-translate-y-0.5 font-[Poppins]"
           >
             <span>Back to Top</span>
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5">↑</span>
