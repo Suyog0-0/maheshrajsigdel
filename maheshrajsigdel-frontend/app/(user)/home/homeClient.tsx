@@ -11,6 +11,7 @@ export default function HomeClient() {
     // Trigger entrance animations after mount
     setTimeout(() => setIsLoaded(true), 100);
   }, []);
+  
 
   return (
     <>
