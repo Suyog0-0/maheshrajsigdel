@@ -84,7 +84,7 @@ const Footer = () => {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group relative p-3 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
+              className="group relative p-4 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700/50 transition-all duration-300 hover:scale-90 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
             >
               <Image 
                 src={social.src} 
