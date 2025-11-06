@@ -181,7 +181,7 @@ const Navbar = () => {
                         
                         {/* Glow effect on hover */}
                         {!isActive && (
-                          <div className="absolute inset-0 rounded-lg bg-orange-500/0 group-hover:bg-orange-500/5 transition-all duration-300 -z-10"></div>
+                          <div className="absolute inset-x-[-0.5rem] inset-y-[-0.25rem] rounded-lg bg-orange-500/0 group-hover:bg-orange-500/5 transition-all duration-300 -z-10"></div>
                         )}
                       </Link>
                     </li>

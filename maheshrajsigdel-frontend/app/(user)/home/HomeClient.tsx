@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import HomeHeroSection from './HomeHeroSection';
 import HomeContactSection from './HomeContactSection';
+import HomeAboutSection from './HomeAboutSection';
 
 export default function HomeClient() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,6 +17,7 @@ export default function HomeClient() {
   return (
     <>
       <HomeHeroSection isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
+      <HomeAboutSection />
       <HomeContactSection />
       
       {/* Global Styles */}
