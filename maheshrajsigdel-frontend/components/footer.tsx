@@ -60,7 +60,7 @@ const Footer = () => {
               <a 
                 key={index}
                 href={`mailto:${email}`}
-                className="group flex items-center text-gray-300 hover:text-orange-400 transition-all duration-300 hover:translate-x-2 break-all text-sm lg:text-base"
+                className="group flex items-center text-gray-300 hover:text-orange-400 transition-all duration-300 hover:translate-x-2 break-all text-sm lg:text-[13px]"
               >
                 <span className="mr-3 text-orange-500 transition-transform duration-300 group-hover:scale-110">✉</span>
                 {email}
@@ -104,7 +104,7 @@ const Footer = () => {
       content: (
         <Link 
           href="/#contact-me-section"
-          className="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25 overflow-hidden"
+          className="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-100 hover:shadow-xl hover:shadow-orange-500/25 overflow-hidden"
         >
           <span className="relative z-10 flex items-center gap-2">
             Get in Touch 

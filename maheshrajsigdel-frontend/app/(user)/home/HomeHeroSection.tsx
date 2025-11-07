@@ -93,13 +93,13 @@ export default function HomeHeroSection({ isLoaded, setIsLoaded }: HomeHeroSecti
 
           {/* Professional Button Group - Side by side on mobile */}
           <div className="hero-buttons flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 pt-6 transform transition-all duration-700 delay-500">
-            <Link href="#about-me-section" className="group relative inline-block">
+            <Link href="/about" className="group relative inline-block">
               <div className="btn btn--about transform transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-950 shadow-lg border border-white/20 hover:from-gray-400 hover:to-gray-300 hover:shadow-xl">
                 <span className="relative z-10">About Me</span>
               </div>
             </Link>
             
-            <Link href="#contact-me-section" className="group relative inline-block">
+            <Link href="/contact" className="group relative inline-block">
               <div className="btn btn--contact transform transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg border border-white/10 hover:from-red-500 hover:to-orange-500 hover:shadow-xl">
                 <span className="relative z-10">Contact Me</span>
               </div>
