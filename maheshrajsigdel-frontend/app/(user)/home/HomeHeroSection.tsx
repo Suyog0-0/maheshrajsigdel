@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 interface HomeHeroSectionProps {
   isLoaded: boolean;
@@ -10,15 +10,6 @@ interface HomeHeroSectionProps {
 }
 
 export default function HomeHeroSection({ isLoaded, setIsLoaded }: HomeHeroSectionProps) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <div className={`hero-section bg-gradient-to-br from-gray-950 via-black to-gray-950 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>

@@ -3,9 +3,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const [openDropdowns, setOpenDropdowns] = useState<number[]>([]);
+
+  const pathname = usePathname();
 
   const toggleDropdown = (index: number) => {
     if (openDropdowns.includes(index)) {
@@ -29,15 +32,15 @@ const Footer = () => {
         <ul className="space-y-3">
           {[
             { href: "/", label: "Home" },
-            { href: "/#portfolio-section", label: "Portfolio" },
-            { href: "/#about-me-section", label: "About Me" },
-            { href: "/#publications-section", label: "Publications" },
-            { href: "/#contact-me-section", label: "Contact Me" }
+            { href: "/portfolio", label: "Portfolio" },
+            { href: "/about", label: "About Me" },
+            { href: "/publications", label: "Publications" },
+            { href: "/contact", label: "Contact Me" }
           ].map((item, index) => (
             <li key={index}>
               <Link 
                 href={item.href}
-                className="group flex items-center text-gray-300 hover:text-orange-400 text-base transition-all duration-300 hover:translate-x-2"
+                className={`group flex items-center text-base transition-all duration-300 hover:translate-x-2 ${pathname === item.href ? 'text-orange-400' : 'text-gray-300 hover:text-orange-400'}`}
               >
                 <span className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3 transition-transform duration-300 group-hover:scale-125"></span>
                 {item.label}

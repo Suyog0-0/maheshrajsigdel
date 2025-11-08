@@ -26,9 +26,11 @@ export default function ContactSection() {
       { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const current = sectionRef.current;
+    if (current) observer.observe(current);
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (current) observer.unobserve(current);
+      observer.disconnect();
     };
   }, []);
 
