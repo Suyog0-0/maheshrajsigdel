@@ -15,7 +15,7 @@ return (
 
       {/* Description */}
     <p className="max-w-3xl text-center text-lg md:text-xl leading-relaxed text-gray-300 opacity-0 animate-fade-up animation-delay-200">
-        I’m a <span className="text-orange-400 font-semibold">kidney specialist</span> 
+        I&apos;m a <span className="text-orange-400 font-semibold">kidney specialist</span> 
         dedicated to delivering compassionate and evidence-based care for people with 
         kidney-related conditions. I focus on accurate diagnosis, effective treatment, 
         and long-term wellness through trust, respect, and open communication. My goal 
