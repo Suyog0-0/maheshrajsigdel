@@ -157,11 +157,12 @@ export default function HomeHeroSection({ isLoaded, setIsLoaded }: HomeHeroSecti
         }
 
         /* Responsive Refinements */
-        @media (min-width: 1024px) {
+        @media (max-width: 1024px) {
           .hero-section {
-            min-height: 100vh;
-            padding: 0 2rem;
+            padding-top: 7rem; /* Prevent overlap by navbar */
           }
+        }
+
           
           .hero-content-wrapper {
             margin-top: -2rem;

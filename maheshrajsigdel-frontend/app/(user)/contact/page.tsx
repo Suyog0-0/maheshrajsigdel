@@ -1,11 +1,8 @@
 'use client';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Link from 'next/link';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { FaLinkedinIn, FaInstagram, FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
+
 
 export default function ContactClient() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -43,19 +40,13 @@ export default function ContactClient() {
 
   return (
     <>
-      {/* ========================================
-          CONTACT PAGE - MODERN PROFESSIONAL DESIGN
-      ======================================== */}
       <div className={`contact-page bg-gradient-to-br from-gray-950 via-black to-gray-950 min-h-screen px-4 sm:px-6 lg:px-8 pt-32 py-24 relative overflow-hidden transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        
-        {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 -right-40 w-80 h-80 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
           <div className="absolute bottom-20 -left-40 w-80 h-80 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-orange-500/5 to-transparent rounded-full blur-2xl"></div>
         </div>
 
-        {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `linear-gradient(rgba(255,140,0,0.1) 1px, transparent 1px),
@@ -65,8 +56,6 @@ export default function ContactClient() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          
-          {/* Page Header */}
           <div className="text-center mb-16 space-y-6 transform transition-all duration-700">
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
@@ -82,14 +71,8 @@ export default function ContactClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            
-            {/* Contact Information Section */}
             <div className="space-y-8 transform transition-all duration-700 delay-200">
-              
-              {/* Contact Cards */}
               <div className="space-y-6">
-                
-                {/* Email Card */}
                 <div className="group relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/30">
@@ -112,7 +95,6 @@ export default function ContactClient() {
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/0 to-red-500/0 group-hover:from-orange-500/5 group-hover:to-red-500/5 transition-all duration-500 pointer-events-none"></div>
                 </div>
 
-                {/* Location Card */}
                 <div className="group relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/30">
@@ -134,7 +116,6 @@ export default function ContactClient() {
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/0 to-red-500/0 group-hover:from-orange-500/5 group-hover:to-red-500/5 transition-all duration-500 pointer-events-none"></div>
                 </div>
 
-                {/* Social Media Card */}
                 <div className="group relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-6 transition-all duration-500 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/30">
@@ -146,33 +127,33 @@ export default function ContactClient() {
                       <h3 className="text-lg font-semibold text-gray-200 mb-3">Connect With Me</h3>
                       <div className="flex gap-3">
                         <a
-                          href="https://linkedin.com/in/mahesh-raj-sigdel-27643b166  "
+                          href="https://linkedin.com/in/mahesh-raj-sigdel-27643b166"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
                         >
                           <FaLinkedinIn
-                            className="w-6 h-6 text-gray-400 group-hover/social:text-transparent group-hover/social:bg-clip-text group-hover/social:bg-gradient-to-r group-hover/social:from-orange-400 group-hover/social:to-red-400 transition-colors duration-300"
+                            className="w-6 h-6 text-gray-400 group-hover/social:text-orange-400 transition-colors duration-300"
                           />
                         </a>
                         <a
-                          href="https://www.instagram.com/maheshrajsigdel/  "
+                          href="https://www.instagram.com/maheshrajsigdel/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
                         >
                           <FaInstagram
-                            className="w-6 h-6 text-gray-400 group-hover/social:text-transparent group-hover/social:bg-clip-text group-hover/social:bg-gradient-to-r group-hover/social:from-orange-400 group-hover/social:to-red-400 transition-colors duration-300"
+                            className="w-6 h-6 text-gray-400 group-hover/social:text-orange-400 transition-colors duration-300"
                           />
                         </a>
                         <a
-                          href="https://x.com/maheshsigdel2  "
+                          href="https://x.com/maheshsigdel2"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group/social p-3 rounded-xl bg-gray-800/50 border border-gray-700/50 transition-all duration-300 hover:scale-110 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/20"
                         >
-                          <FaXTwitter
-                            className="w-6 h-6 text-gray-400 group-hover/social:text-transparent group-hover/social:bg-clip-text group-hover/social:bg-gradient-to-r group-hover/social:from-orange-400 group-hover/social:to-red-400 transition-colors duration-300"
+                          <FaTwitter
+                            className="w-6 h-6 text-gray-400 group-hover/social:text-orange-400 transition-colors duration-300"
                           />
                         </a>
                       </div>
@@ -182,28 +163,26 @@ export default function ContactClient() {
                 </div>
               </div>
 
-              {/* Doctors helping patients image */}
               <div className="hidden lg:block relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700 opacity-40 group-hover:opacity-60"></div>
                 <div className="relative w-full h-64 bg-gray-800/50 rounded-3xl border border-gray-700/50 overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                     alt="Doctors helping patients"
+                    width={2070}
+                    height={1380}
                     className="object-cover w-full h-full"
                   />
+
                 </div>
               </div>
             </div>
 
-            {/* Contact Form Section */}
             <div className="transform transition-all duration-700 delay-300">
               <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-8 transition-all duration-500 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
-                
                 <h2 className="text-2xl font-bold text-gray-200 mb-6">Send Me a Message</h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  
-                  {/* Name Input */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                       Full Name *
@@ -220,7 +199,6 @@ export default function ContactClient() {
                     />
                   </div>
 
-                  {/* Email Input */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                       Email Address *
@@ -237,7 +215,6 @@ export default function ContactClient() {
                     />
                   </div>
 
-                  {/* Subject Input */}
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
                       Subject *
@@ -254,7 +231,6 @@ export default function ContactClient() {
                     />
                   </div>
 
-                  {/* Message Textarea */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                       Message *
@@ -271,7 +247,6 @@ export default function ContactClient() {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -294,7 +269,6 @@ export default function ContactClient() {
             </div>
           </div>
 
-          {/* Office Hours Section */}
           <div className="mt-16 transform transition-all duration-700 delay-400">
             <div className="relative bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-3xl border border-gray-700/50 p-8 transition-all duration-500 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
               <div className="text-center space-y-6">
@@ -317,7 +291,6 @@ export default function ContactClient() {
         </div>
       </div>
 
-      {/* Global Styles */}
       <style jsx global>{`
         @keyframes pulse-slow {
           0%, 100% { opacity: 0.2; }
@@ -328,7 +301,6 @@ export default function ContactClient() {
           animation: pulse-slow 8s ease-in-out infinite;
         }
 
-        /* Custom scrollbar for textarea */
         textarea::-webkit-scrollbar {
           width: 8px;
         }
