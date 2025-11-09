@@ -1,8 +1,7 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 
-const AboutMeSection = () => {
+const AboutMe = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -11,83 +10,81 @@ const AboutMeSection = () => {
   }, []);
 
   return (
-    <section
-      id="about-me-section"
-      className={`flex flex-col items-center justify-center min-h-screen bg-gradient-to-tr from-gray-900 via-black to-gray-900 text-white relative overflow-visible py-24 px-6 md:px-20 transition-opacity duration-1000 ${
-        isLoaded ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      {/* Animated Glow Backgrounds */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -right-40 w-80 h-80 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div
-          className="absolute bottom-20 -left-40 w-80 h-80 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse-slow"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-orange-500/5 to-transparent rounded-full blur-2xl"></div>
-      </div>
-
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,140,0,0.1) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,140,0,0.1) 1px, transparent 1px)`,
-            backgroundSize: "50px 50px",
-          }}
-        ></div>
-      </div>
-
-      {/* Heading */}
-      <h1
-        className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(255,69,0,0.7)] text-center leading-tight pb-10 relative z-10"
-        style={{
-          WebkitTextStroke: "0.5px rgba(0,0,0,0.15)",
-        }}
+      <section
+        id="about"
+        className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-200 py-28 px-6 md:px-16 transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       >
-        About Me
-      </h1>
+        <div className="text-center mb-16">
+          <h1
+            className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_10px_rgba(255,69,0,0.7)]"
+            style={{ WebkitTextStroke: "0.5px rgba(0,0,0,0.15)" }}
+          >
+            About Me
+          </h1>
+          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 animate-gradient-x"></div>
+          <p className="mt-4 text-gray-400 text-xl">
+            Dedicated kidney specialist providing compassionate care and comprehensive treatment
+          </p>
+        </div>
 
-      {/* Description */}
-      <div className="max-w-5xl text-lg md:text-xl leading-relaxed space-y-8 text-justify relative z-10">
-        <p>
-          I am a dedicated{" "}
-          <span className="text-orange-400 font-semibold">kidney specialist</span>{" "}
-          committed to providing compassionate, comprehensive, and evidence-based care for individuals with kidney-related conditions. My focus is to ensure every patient receives accurate diagnosis, effective treatment, and ongoing support toward better health and well-being.
-        </p>
+      <div className="grid md:grid-cols-3 gap-10">
+        <div className="md:col-span-2 bg-gray-800/40 rounded-2xl p-8 md:p-10 shadow-lg leading-relaxed text-lg">
+          <p className="mb-6">
+            I am a dedicated <span className="text-yellow-400 font-semibold">kidney specialist </span> committed to providing compassionate and comprehensive care for patients 
+            with kidney-related conditions. My goal is to ensure every individual receives accurate diagnosis, effective treatment, and continuous support throughout their journey toward better health.
+          </p>
 
-        <p>
-          With years of experience in managing{" "}
-          <span className="text-pink-400 font-medium">
-            chronic kidney disease, dialysis, and transplant medicine,
-          </span>{" "}
-          I believe in a personalized approach that combines medical excellence with empathy. My practice emphasizes open communication, helping patients understand their conditions and make informed decisions about their care.
-        </p>
+          <p className="mb-6">
+            With years of clinical experience and a deep interest in <span className="text-yellow-400 font-semibold">chronic kidney disease, dialysis management</span>, and
+            <span className="text-yellow-400 font-semibold"> transplant medicine</span>, 
+            I believe in a personalized approach that focuses on both medical excellence 
+            and patient well-being.
+          </p>
 
-        <p>
-          Beyond clinical work, I am actively involved in{" "}
-          <span className="text-pink-400 font-medium">
-            medical research and patient education,
-          </span>{" "}
-          promoting early detection and prevention of kidney diseases. I’m passionate about empowering people to take charge of their kidney health through awareness, lifestyle guidance, and proactive medical support.
-        </p>
+          <p className="mb-6">
+            Beyond my clinical practice, I stay actively involved in <span className="text-pink-400 font-semibold">medical research and patient education</span>, advocating for early detection and prevention of kidney diseases. 
+            I am passionate about empowering people to take charge of their kidney health through awareness, lifestyle guidance, and compassionate care.
+          </p>
 
-        <p>
-          My philosophy of care centers on{" "}
-          <span className="text-orange-400 font-semibold">
-            trust, respect, and lifelong partnership
-          </span>{" "}
-          with patients. I view medicine not just as treatment, but as guidance toward healthier, more fulfilling lives. Outside of work, I enjoy reading medical journals, exploring innovations in digital health, and{" "}
-          <span className="text-pink-400 font-medium">spending time with family</span>{" "}
-          and nature — experiences that keep me grounded and inspired to serve better every day.
-        </p>
+          <p>
+            My philosophy of care revolves around trust, respect, and long-term partnership with patients. I believe medicine is not only about treating illnesses but also 
+            about guiding people toward <span className="text-yellow-400 font-semibold">healthier, more fulfilling lives</span>. My goal is to listen, support, and provide the highest standard of care possible.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <div className="bg-gradient-to-r from-yellow-900/40 to-orange-900/30 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+              Clinical Experience
+            </h3>
+            <p className="text-gray-300 text-base">
+              Years of specialized practice in nephology with focus on personalized patient care
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-900/40 to-indigo-900/30 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-semibold text-pink-400 mb-2">
+              Research & Education
+            </h3>
+            <p className="text-gray-300 text-base">
+              Active involvement in medical research and patient education initiatives
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-900/40 to-sky-900/30 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-semibold text-sky-400 mb-2">
+              Care Philosophy
+            </h3>
+            <p className="text-gray-300 text-base">
+              Trust, respect, and long-term partnership focused on holistic well-being
+            </p>
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
         @keyframes gradient-x {
-          0%,
-          100% {
+          0%, 100% {
             background-position: 0% center;
           }
           50% {
@@ -98,22 +95,13 @@ const AboutMeSection = () => {
           background-size: 200% 200%;
           animation: gradient-x 6s ease infinite;
         }
-
-        @keyframes pulse-slow {
-          0%,
-          100% {
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.4;
-          }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 8s ease-in-out infinite;
+        .animate-gradient-x {
+          background-size: 200% 200%;
+          animation: gradient-x 6s ease infinite;
         }
       `}</style>
     </section>
   );
 };
 
-export default AboutMeSection;
+export default AboutMe;
