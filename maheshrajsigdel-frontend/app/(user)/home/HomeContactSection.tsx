@@ -66,12 +66,12 @@ export default function ContactSection() {
         " style={{ animationDelay: '3s' }} />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* ===== SECTION HEADER ===== */}
         <header className={`
           text-center mb-16
           transition-opacity duration-700
-          ${isVisible ? 'opacity-100' : 'opacity-0'}
+          ${isVisible ? 'opacity-100' : 'opacity-0'} 
           ${isVisible ? 'animate-fade-up' : ''}
         `}>
           <h2 
@@ -101,7 +101,7 @@ export default function ContactSection() {
 
         {/* ===== CONTACT CARDS GRID ===== */}
         <div className="
-          grid md:grid-cols-2 gap-6 max-w-3xl mx-auto
+          grid md:grid-cols-4 gap-6 max-w-[1600px] mx-auto
           transition-opacity duration-700 delay-150
           ${isVisible ? 'opacity-100' : 'opacity-0'}
           ${isVisible ? 'animate-fade-up' : ''}
