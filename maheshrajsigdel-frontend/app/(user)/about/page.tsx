@@ -244,6 +244,7 @@ const AboutMe = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 relative z-10">
                 {/* YEARS EXPERIENCE */}
                 <div className="flex flex-col items-center text-center group/item min-h-[72px]">
@@ -252,7 +253,7 @@ const AboutMe = () => {
                       <FaCalendarAlt className="w-5 h-5 text-amber-400" />
                     </div>
                     <span className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent animate-gradient-x">
-                      10+
+                      20+
                     </span>
                   </div>
                   <span className="text-xs text-slate-400 uppercase tracking-wider font-medium group-hover/item:text-amber-300 transition-colors duration-200">
@@ -261,7 +262,7 @@ const AboutMe = () => {
                 </div>
 
                 {/* VERTICAL DIVIDER */}
-                <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+                {/* <div className="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div> */}
 
                 {/* PATIENTS HELPED */}
                 <div className="flex flex-col items-center text-center group/item min-h-[72px]">
@@ -270,7 +271,7 @@ const AboutMe = () => {
                       <FaUserFriends className="w-5 h-5 text-orange-400" />
                     </div>
                     <span className="text-4xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-rose-400 bg-clip-text text-transparent animate-gradient-x">
-                      500+
+                      150000+
                     </span>
                   </div>
                   <span className="text-xs text-slate-400 uppercase tracking-wider font-medium group-hover/item:text-orange-300 transition-colors duration-200">
@@ -278,7 +279,10 @@ const AboutMe = () => {
                   </span>
                 </div>
               </div>
+
+              
             </div>
+            
           </div>
         </div>
       </div>
